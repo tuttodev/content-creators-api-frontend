@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import {ContentCreatorsProvider} from "@/app/_providers/ContentCreatorsProvider";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -32,6 +33,7 @@ export default function RootLayout({
           {children}
         </ContentCreatorsProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }
