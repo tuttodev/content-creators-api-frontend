@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {Header} from "@/app/_components/Header";
 import TopBanner from "@/app/_components/TopBanner";
+import { Analytics } from "@vercel/analytics/react"
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function RootLayout({
         </ContentCreatorsProvider>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+      <Analytics />
     </html>
   );
 }
